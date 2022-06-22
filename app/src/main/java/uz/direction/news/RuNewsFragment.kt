@@ -34,7 +34,6 @@ class RuNewsFragment : Fragment(R.layout.ru_news_fragment) {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-
         _binding = RuNewsFragmentBinding.inflate(layoutInflater)
         return binding.root
 
@@ -43,36 +42,26 @@ class RuNewsFragment : Fragment(R.layout.ru_news_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val position = arguments?.getInt(POSITION_ARG)
-        setupViewPager()
-        setupRecyclerView()
+
         position?.let {
             when (position) {
                 0 -> {
-                    binding.pager.adapter=RecyclerViewAdapter()
                     repository.getNews(Country.US)
-                    repository.newsLiveData.observe(viewLifecycleOwner) { response ->
-                        myAdapter.setData(response.articles)
-                        myAdapter.setOnClickListener { _, position ->
-                            val intent =
-                                Intent(Intent.ACTION_VIEW).setData(Uri.parse(response.articles[position].url))
-                            startActivity(intent)
-                        }
-                    }
                 }
-                else -> {
-                    repository.getNews(Country.US)
-                    repository.newsLiveData.observe(viewLifecycleOwner) { response ->
-                        myAdapter.setData(response.articles)
-                        myAdapter.setOnClickListener { _, position ->
-                            val intent =
-                                Intent(Intent.ACTION_VIEW).setData(Uri.parse(response.articles[position].url))
-                            startActivity(intent)
-                        }
-                    }
+                1 -> {
+                    repository.getNews(Country.RU)
                 }
             }
         }
-
+        setupRecyclerView()
+        repository.newsLiveData.observe(viewLifecycleOwner) { response ->
+            myAdapter.setData(response.articles)
+            myAdapter.setOnClickListener { _, position ->
+                val intent =
+                    Intent(Intent.ACTION_VIEW).setData(Uri.parse(response.articles[position].url))
+                startActivity(intent)
+            }
+        }
 
     }
 
@@ -87,10 +76,6 @@ class RuNewsFragment : Fragment(R.layout.ru_news_fragment) {
         }
     }
 
-    private fun setupViewPager() {
-        val adapter = ViewPagerAdapter(this)
-        binding.pager.adapter = adapter
-    }
 
     private fun setupRecyclerView() {
         binding.recyclerView.apply {
