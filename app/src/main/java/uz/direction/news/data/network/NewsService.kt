@@ -7,6 +7,6 @@ import uz.direction.news.data.model.News
 
 interface NewsService {
 
-    @GET("v2/top-headlines")
-    suspend fun getNews(@Query("country") country: Country): Response<News>
+    @GET("v2/top-headlines?language=en")
+    suspend fun getRuNews(@Query("category") category: Category): Response<News>
 }

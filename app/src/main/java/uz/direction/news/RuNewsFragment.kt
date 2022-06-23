@@ -8,16 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
-import uz.direction.news.data.network.Country
+import uz.direction.news.data.network.Category
 import uz.direction.news.data.network.RetrofitService
 import uz.direction.news.data.adapter.RecyclerViewAdapter
-import uz.direction.news.data.adapter.ViewPagerAdapter
-import uz.direction.news.data.model.News
 import uz.direction.news.data.repository.NewsRepository
 import uz.direction.news.databinding.RuNewsFragmentBinding
-import java.text.FieldPosition
 
 
 class RuNewsFragment : Fragment(R.layout.ru_news_fragment) {
@@ -46,10 +41,25 @@ class RuNewsFragment : Fragment(R.layout.ru_news_fragment) {
         position?.let {
             when (position) {
                 0 -> {
-                    repository.getNews(Country.US)
+                    repository.getRuNews(Category.GENERAL)
                 }
                 1 -> {
-                    repository.getNews(Country.RU)
+                    repository.getRuNews(Category.ENTERTAINMENT)
+                }
+                2 -> {
+                    repository.getRuNews(Category.BUSINESS)
+                }
+                3 -> {
+                    repository.getRuNews(Category.HEALTH)
+                }
+                4 -> {
+                    repository.getRuNews(Category.SCIENCE)
+                }
+                5 -> {
+                    repository.getRuNews(Category.SPORTS)
+                }
+                6 -> {
+                    repository.getRuNews(Category.TECHNOLOGY)
                 }
             }
         }

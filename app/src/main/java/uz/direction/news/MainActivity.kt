@@ -9,7 +9,6 @@ import uz.direction.news.data.adapter.ViewPagerAdapter
 class MainActivity : AppCompatActivity() {
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,9 +25,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun getTitle(position: Int): String {
         return when (position) {
-            0 -> "English"
-            1 -> "Russian"
-            else -> "-> null"
+            0 -> "GENERAL"
+            1 -> "ENTERTAINMENT"
+            2 -> "BUSINESS"
+            3 -> "HEALTH"
+            4 -> "SCIENCE"
+            5 -> "SPORTS"
+            else -> "TECHNOLOGY"
         }
     }
 }
