@@ -5,6 +5,8 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import uz.direction.news.data.model.News
+import uz.direction.news.retrofit.FlowCallAdapterFactory
+import uz.direction.news.retrofit.FlowResourceCallAdapterFactory
 
 object RetrofitService {
     private val client = OkHttpClient.Builder()
@@ -18,13 +20,13 @@ object RetrofitService {
         }
         .build()
 
+
     private val retrofit: Retrofit =
         Retrofit.Builder()
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(Gson()))
             .baseUrl("https://newsapi.org/")
+            .addCallAdapterFactory(FlowCallAdapterFactory.create())
             .build()
-
-
     val newsService: NewsService = retrofit.create(NewsService::class.java)
 }
