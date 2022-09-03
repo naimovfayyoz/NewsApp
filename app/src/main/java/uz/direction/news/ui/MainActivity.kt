@@ -1,10 +1,11 @@
-package uz.direction.news
+package uz.direction.news.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
-import uz.direction.news.data.adapter.ViewPagerAdapter
+import uz.direction.news.R
+import uz.direction.news.ui.adapter.ViewPagerAdapter
 
 class MainActivity : AppCompatActivity() {
 

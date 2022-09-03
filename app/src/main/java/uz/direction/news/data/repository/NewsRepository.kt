@@ -5,9 +5,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
-import uz.direction.news.data.network.Category
-import uz.direction.news.data.model.News
-import uz.direction.news.data.network.NewsService
+import uz.direction.news.utill.Category
+import uz.direction.news.model.News
+import uz.direction.news.data.remote.NewsService
 
 class NewsRepository(private val newsService: NewsService) {
 

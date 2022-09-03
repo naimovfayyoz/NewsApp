@@ -1,10 +1,10 @@
-package uz.direction.news.data.network
+package uz.direction.news.di
 
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import uz.direction.news.data.model.News
+import uz.direction.news.data.remote.NewsService
 
 object RetrofitService {
     private val client = OkHttpClient.Builder()

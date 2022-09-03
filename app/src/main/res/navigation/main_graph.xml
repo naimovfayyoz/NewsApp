@@ -6,7 +6,7 @@
     app:startDestination="@id/ruNewsFragment">
     <fragment
         android:id="@+id/ruNewsFragment"
-        android:name="uz.direction.news.RuNewsFragment"
+        android:name="uz.direction.news.ui.CategoryNewsFragment"
         android:label="ru_news_fragment"
         tools:layout="@layout/ru_news_fragment" />
 </navigation>

@@ -1,4 +1,4 @@
-package uz.direction.news
+package uz.direction.news.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -8,14 +8,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import uz.direction.news.data.network.Category
-import uz.direction.news.data.network.RetrofitService
-import uz.direction.news.data.adapter.RecyclerViewAdapter
+import uz.direction.news.R
+import uz.direction.news.utill.Category
+import uz.direction.news.di.RetrofitService
+import uz.direction.news.ui.adapter.RecyclerViewAdapter
 import uz.direction.news.data.repository.NewsRepository
 import uz.direction.news.databinding.RuNewsFragmentBinding
 
 
-class RuNewsFragment : Fragment(R.layout.ru_news_fragment) {
+class CategoryNewsFragment : Fragment(R.layout.ru_news_fragment) {
 
 
     private var _binding: RuNewsFragmentBinding? = null
@@ -79,7 +80,7 @@ class RuNewsFragment : Fragment(R.layout.ru_news_fragment) {
         var POSITION_ARG = "position_arg"
 
         @JvmStatic
-        fun newInstance(position: Int) = RuNewsFragment().apply {
+        fun newInstance(position: Int) = CategoryNewsFragment().apply {
             arguments = Bundle().apply {
                 putInt(POSITION_ARG, position)
             }

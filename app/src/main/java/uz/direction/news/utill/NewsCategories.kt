@@ -1,4 +1,4 @@
-package uz.direction.news.data.network
+package uz.direction.news.utill
 
 enum class Category(name: String) {
     BUSINESS("business"),

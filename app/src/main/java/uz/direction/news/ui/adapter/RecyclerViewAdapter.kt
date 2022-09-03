@@ -1,4 +1,4 @@
-package uz.direction.news.data.adapter
+package uz.direction.news.ui.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import uz.direction.news.R
-import uz.direction.news.data.model.Article
+import uz.direction.news.model.Article
 
 class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 

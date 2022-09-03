@@ -1,4 +1,4 @@
-package uz.direction.news.data.model
+package uz.direction.news.model
 
 data class News(
     val articles: List<Article>,
