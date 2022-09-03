@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import uz.direction.news.ArticleComparator
 import uz.direction.news.R
 import uz.direction.news.model.Article
 
-class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+class RecyclerViewAdapter : ListAdapter<Article,RecyclerViewAdapter.ViewHolder>(ArticleComparator()) {
 
     private var articles = emptyList<Article>()
     private var onClick: ((Article, Int) -> Unit)? = null
@@ -52,12 +54,12 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
         }
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    fun setData(newList: List<Article>) {
-        articles = newList
-        notifyDataSetChanged()
-
-    }
+//    @SuppressLint("NotifyDataSetChanged")
+//    fun setData(newList: List<Article>) {
+//        articles = newList
+//        notifyDataSetChanged()
+//
+//    }
 
 
 }
